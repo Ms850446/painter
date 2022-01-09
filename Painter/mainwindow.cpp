@@ -395,7 +395,7 @@ void MainWindow::on_ok_clicked()
     { double angle;
       double length=ui->length->text().toDouble(&isNumber);
       if(isNumber)
-        angle=ui->height->text().toDouble(&isNumber);
+        angle=ui->height->text().toDouble(&isNumber)/180.0*3.14*-1;
       if(!isNumber)
         QMessageBox::warning(this,"invalid data","please enter a valid input");
         else
@@ -448,7 +448,7 @@ void MainWindow::on_actionManual_input_triggered()
     ui->width_length_raduisLabel->setText("Enter width");
     ui->heightLabel->setVisible(true);  
     ui->height->setVisible(true);
-    ui->height->setText("Enter the Height");
+    ui->heightLabel->setText("Enter the Height");
     }
     if(currentTool==circletool)
     ui->width_length_raduisLabel->setText("Enter Raduis");
@@ -457,7 +457,7 @@ void MainWindow::on_actionManual_input_triggered()
     {
      ui->width_length_raduisLabel->setText("Enter Length");
      ui->heightLabel->setVisible(true);
-     ui->heightLabel->setText("angle in Radian");
+     ui->heightLabel->setText("angle in Degree");
      ui->height->setVisible(true);
         }
 
